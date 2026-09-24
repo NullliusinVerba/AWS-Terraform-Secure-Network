@@ -1,2 +1,20 @@
-Diseño y Despliegue Automatizado de Red Segura en AWS (IaC)Descripción del ProyectoImplementación de una arquitectura de red base en AWS utilizando Terraform para automatizar el despliegue (Infrastructure as Code). Este diseño garantiza la segmentación del tráfico y establece las bases para alojar aplicaciones de forma segura.
-La infraestructura desplegada opera en la región us-east-1 y consta de:   VPC: Segmento de red principal con rango CIDR 10.20.0.0/16.   Subredes Públicas (2): Conectadas a un Internet Gateway (IGW) para recursos que requieren salida a internet (10.20.1.0/24 y 10.20.2.0/24).   Subredes Privadas (2): Completamente aisladas de internet, diseñadas para proteger bases de datos y lógica interna (10.20.10.0/24 y 10.20.20.0/24).   Seguridad y Control de Acceso Implementación de Tablas de Rutas independientes para aislar el tráfico de las subredes privadas.   Despliegue de un Security Group (web-app-sg) configurado con reglas estrictas de entrada (Ingress) limitadas a tráfico HTTP (Puerto 80) y HTTPS (Puerto 443).   Tecnologías Utilizadas Amazon Web Services (VPC, Subnets, IGW, Route Tables, Security Groups)Terraform (HashiCorp Configuration Language)
+# Diseño y Despliegue Automatizado de Red Segura en AWS (IaC)
+
+## Descripción del Proyecto
+Implementación de una arquitectura de red base en AWS utilizando Terraform para automatizar el despliegue (Infrastructure as Code). Este diseño garantiza la segmentación del tráfico y establece las bases para alojar aplicaciones de forma segura.
+
+## Topología de la Arquitectura
+![Diagrama de Red](diagrama.png)
+
+La infraestructura desplegada opera en la región `us-east-1` y consta de:
+* **VPC:** Segmento de red principal con rango CIDR 10.20.0.0/16.
+* **Subredes Públicas (2):** Conectadas a un Internet Gateway (IGW) para recursos que requieren salida a internet (10.20.1.0/24 y 10.20.2.0/24).
+* **Subredes Privadas (2):** Completamente aisladas de internet, diseñadas para proteger bases de datos y lógica interna (10.20.10.0/24 y 10.20.20.0/24).
+
+## Seguridad y Control de Acceso
+* Implementación de Tablas de Rutas independientes para aislar el tráfico de las subredes privadas.
+* Despliegue de un Security Group (`web-app-sg`) configurado con reglas estrictas de entrada (Ingress) limitadas a tráfico HTTP (Puerto 80) y HTTPS (Puerto 443).
+
+## Tecnologías Utilizadas
+* Amazon Web Services (VPC, Subnets, IGW, Route Tables, Security Groups)
+* Terraform (HashiCorp Configuration Language)

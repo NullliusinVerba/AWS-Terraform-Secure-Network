@@ -1,0 +1,26 @@
+# Directorios de Terraform locales y cachés
+.terraform/
+.terraform.lock.hcl
+
+# Archivos de estado de Terraform (Evita filtraciones críticas)
+*.tfstate
+*.tfstate.*
+
+# Archivos de log y bloqueos
+crash.log
+crash.*.log
+*.tfplan
+
+# Archivos de variables con datos sensibles o valores reales
+*.tfvars
+*.tfvars.json
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Entornos de desarrollo y carpetas del sistema
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini

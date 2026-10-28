@@ -12,6 +12,7 @@ Este repositorio contiene el código y la documentación para aprovisionar una r
 
 ## Arquitectura Desplegada
 ![Diagrama de Arquitectura](docs/Diagrama%20de%20Red.png)
+
 El código `main.tf` crea los siguientes recursos:
 * **VPC:** `10.10.0.0/16` (Aislamiento de red).
 * **Subred Pública:** `10.10.1.0/24` (Acceso a Internet vía Internet Gateway).
